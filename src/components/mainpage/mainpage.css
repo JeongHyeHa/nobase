@@ -87,9 +87,11 @@ body {
 .icon-container {
     width: 24px; /* 아이콘의 너비를 조절 */
     height: 24px; /* 아이콘의 높이를 조절 */
+    display: flex;
+    align-items: center;
 }
 
-.icon-container img {
+.icon-container svg {
     width: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
     height: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
 }

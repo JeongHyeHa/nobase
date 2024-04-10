@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
-import GoogleLoginButton from './googleloginbutton';
+import LoginPage from './googleloginbutton';
 
 const Login = () => {
     const [userId, setUserId] = useState('');
@@ -94,8 +94,8 @@ const Login = () => {
                         </div>
                         <div className="line"></div>
                     </div>
-                    <div>
-                        <GoogleLoginButton />
+                    <div className='google_btn'>
+                        <LoginPage />
                     </div>
                 </div>
             </main>

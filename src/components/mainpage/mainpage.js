@@ -1,5 +1,10 @@
 import './mainpage.css';
 import React, { useState } from 'react'; // useState를 추가
+import { ReactComponent as Home } from '../../assets/image/Home.svg';
+import { ReactComponent as Category } from '../../assets/image/Category.svg';
+import { ReactComponent as Chat} from '../../assets/image/Chat.svg';
+import { ReactComponent as User} from '../../assets/image/User.svg';
+
 
 const MainPage = () => {
     const [showCategory, setShowCategory] = useState(false);
@@ -61,22 +66,24 @@ const MainPage = () => {
                 <ul>
                     <li>
                         <div className="icon-container">
-                            <a href="/home"><img src={"../../assets/image/Home.svg"} alt="홈" /></a>
+                            <a href="/home"><Home/></a>
                         </div>
                     </li>
                     <li>
                         <button className="icon-button" onClick={toggleCategory}>
-                            <img src={"../../assets/image/Category.svg"} alt="카테고리" />
+                        <div className="icon-container">
+                            <Category />
+                        </div>
                         </button>
                     </li>
                     <li>
                         <div className="icon-container">
-                            <a href="/message"><img src={"../../assets/image/Chat.svg"} alt="채팅" /></a>
+                            <a href="/message"><Chat /></a>
                         </div>
                     </li>
                     <li>
                         <div className="icon-container">
-                            <a href="/user"><img src={"../../assets/image/User.svg"} alt="사용자 페이지" /></a>
+                            <a href="/user"><User /></a>
                         </div>
                         <a href="/write" className="write-button">+</a>
                     </li>

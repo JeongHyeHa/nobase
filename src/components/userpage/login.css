@@ -75,3 +75,8 @@ input {
 .login_md_passwd {
   width: 100%; /* 아이디/비밀번호 입력란의 너비를 100%로 설정 */
 }
+
+
+.google_btn {
+  background-origin: #EEEEEE;
+}
