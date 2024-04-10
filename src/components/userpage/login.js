@@ -20,12 +20,12 @@ const Login = () => {
     
         // 아이디와 비밀번호 입력 여부 확인
         if (!userId) {
-            setErrorMessage('아이디를 입력해주세요.');
+            alert('아이디를 입력해주세요.'); // 경고창으로 메시지 출력
             return;
         }
     
         if (!password) {
-            setErrorMessage('비밀번호를 입력해주세요.');
+            alert('비밀번호를 입력해주세요.'); // 경고창으로 메시지 출력
             return;
         }
     
@@ -95,8 +95,16 @@ const Login = () => {
                         <div className="line"></div>
                     </div>
                     <div className='google_btn'>
-                        <LoginPage />
+                        <LoginPage className='google_img'/>
                     </div>
+                    {/*<div className="terms">
+                    <p>
+                        By clicking continue, you agree to our 
+                        <span id="TermsOfService"> <a href='#'>Terms of Service</a></span>
+                        , and 
+                        <span id="PrivacyPolicy"> <a href = '#'>Privacy Policy</a></span>
+                    </p>
+                    </div>*/}
                 </div>
             </main>
         </div>

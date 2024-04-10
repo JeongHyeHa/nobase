@@ -14,6 +14,8 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  /*width: 100%;
+  height: 100%;*/
 }
 
 /*--sign up-- */
@@ -78,5 +80,31 @@ input {
 
 
 .google_btn {
-  background-origin: #EEEEEE;
+  margin-top: 16px; /* 구글 로그인 버튼과 위쪽 요소 간의 간격 설정 */
 }
+
+/*.terms {
+  width: 80%;
+  margin-top: 14px; 
+  text-align: center; 
+  font-size: 16px; 
+  color: #828282; 
+  text-align: center;
+}
+
+#TermsOfService a,
+#PrivacyPolicy a{
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+p {
+  text-align: center; 
+  display: inline-block;
+  width: 80%;
+}
+*/

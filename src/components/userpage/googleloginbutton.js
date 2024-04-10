@@ -25,7 +25,7 @@ const GoogleLoginButton = () => {
 
   return (
       <div onClick={() => signIn()}>
-          <img src={google} alt="Login with Google" style={{ cursor: 'pointer' }} />
+          <img src={google} alt="Login with Google" style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center' }} />
       </div>
   );
 };
