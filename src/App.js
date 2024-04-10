@@ -15,7 +15,7 @@ function App() {
                 <Route path="/home" element={<MainPage />} />
                 <Route path="/write" element={<WritePage />} />
                 <Route path="/user" element={<UserPage />} /> 
-                <Route path="/login" component={<Login />} />
+                <Route path="/login" element={<Login />} />
                 {/* 여기에 다른 경로 및 컴포넌트를 위한 Route를 추가할 수 있습니다. */}
             </Routes>
         </Router>

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Axios를 사용하여 HTTP 요청을 보낼 수 있습니다.
 import './login.css';
-import { Link } from 'react-router-dom'; // Link를 임포트
-
+import GoogleLoginButton from './googleloginbutton';
 
 const Login = () => {
     const [userId, setUserId] = useState('');
@@ -95,6 +93,9 @@ const Login = () => {
                             Sign Up
                         </div>
                         <div className="line"></div>
+                    </div>
+                    <div>
+                        <GoogleLoginButton />
                     </div>
                 </div>
             </main>
