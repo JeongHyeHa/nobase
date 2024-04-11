@@ -19,7 +19,11 @@ body {
 }
 
 /*--sign up-- */
-.container {
+.login-container {
+  width: 100%; /* 너비를 100%로 설정하여 부모 요소의 전체 너비를 차지하도록 함 */
+  max-width: 360px; /* 로그인 컨테이너의 최대 너비를 설정 */
+  margin: auto; /* 자동 마진을 설정하여 가로축으로 중앙 정렬 */
+  padding: 10px; /* 내부 여백 추가 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,19 +32,21 @@ body {
 .line {
   height: 1px;
   width: 100px;
+  
   background-color: #E6E6E6;
-  margin: 0 10px;
+  margin: 0 10px; /* 라인과 텍스트 사이의 마진 설정 */
 }
 
 .title {
   font-size: 16px;
   color: #828282;
-  text-decoration: none; /* 링크 표시 없애기 */
-  cursor: pointer; /* 커서를 포인터로 변경하여 사용자에게 클릭 가능성을 시각적으로 나타냄 */
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 10px; /* 타이틀의 좌우 패딩 설정 */
 }
 
 .title:hover {
-  color: rgb(63, 63, 63); /* 마우스 호버 시 색상 변경 */
+  color: rgb(63, 63, 63); 
 }
 /*여기까지*/
 
@@ -55,7 +61,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
-  width: 100%; /* 버튼의 너비를 100%로 설정 */
+  width: 100%; 
   margin-top: 16px; /* 버튼 위쪽 여백 설정 */
   margin-bottom: 16px; /* 버튼 아래쪽 여백 설정 */
 }

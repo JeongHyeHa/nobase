@@ -1,12 +1,27 @@
-import React from 'react'; // React만 import하여 사용합니다
-import { Link } from 'react-router-dom'; // Link를 임포트
+import React from 'react'; 
+import { Link } from 'react-router-dom'; 
+import profile from '../../assets/image/profile.jpg'; 
+import './userpage.css';
 
-function UserPage() { // 함수명을 대문자로 시작하도록 변경합니다
+function UserPage () { 
     return (
-        <div className="title">
-            <Link to="/login">Login</Link>
+        <div>
+            <header className="main-header">
+                <h1>Soon Market</h1>
+            </header>
+            <main>
+                <div className="profile-image-container">
+                    <img src={profile} alt="로고" className="profile-image" />
+                </div>
+                <div className="title">
+                    <Link to="/login">Login</Link>
+                </div>
+                <div className="title">
+                    <Link to="/signup">Sign Up</Link>
+                </div>
+            </main>
         </div>
     );
 }
 
-export default UserPage; // export 구문 수정
+export default UserPage;

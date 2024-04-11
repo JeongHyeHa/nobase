@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 가운데 정렬을 위해 세로 방향으로 요소들을 가운데 정렬합니다 */
+    justify-content: center; /* 수평 가운데 정렬을 위해 가로 방향으로 요소들을 가운데 정렬합니다 */
+    height: 100vh; /* 화면의 전체 높이를 차지합니다 */
+}
+
+.main-content {
+    text-align: center; /* 내부 요소들을 가운데 정렬합니다 */
+}
+
+.main-header {
+    margin-bottom: 10px; /* header 아래에 10px 간격을 추가합니다 */
+}
+
+.profile-image-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 10px; /* 이미지 아래에 10px 간격을 추가합니다 */
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.title {
+    display: flex; /* 요소들을 행으로 표시합니다 */
+    flex-direction: column; /* 요소들을 세로로 배치합니다 */
+    align-items: center; /* 세로 중앙 정렬을 수행합니다 */
+}
+
+.title a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    margin-top: 10px; /* 각 링크 요소 사이에 10px 간격을 추가합니다 */
+}
+
+.title a:hover {
+    color: #555;
+}

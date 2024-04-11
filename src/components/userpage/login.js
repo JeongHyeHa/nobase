@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './login.css';
 import LoginPage from './googleloginbutton';
+import { Link } from 'react-router-dom';
+
+
 
 const Login = () => {
     const [userId, setUserId] = useState('');
@@ -86,11 +89,10 @@ const Login = () => {
                         Login
                     </button>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
-                    <div className="container">
+                    <div className="login-container">
                         <div className="line"></div>
                         <div className="title">
-                            {/*<Link to="/signup">Sign Up</Link>*/}
-                            Sign Up
+                            <Link to="/signup">Sign Up</Link>
                         </div>
                         <div className="line"></div>
                     </div>
