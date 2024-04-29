@@ -19,7 +19,7 @@
     height: 100px;
     overflow: hidden;
     border-radius: 50%;
-    margin-bottom: 10px; /* 이미지 아래에 10px 간격을 추가합니다 */
+    margin-bottom: 40px; /* 이미지 아래에 10px 간격을 추가합니다 */
 }
 
 .profile-image {
@@ -37,11 +37,47 @@
 
 .title a {
     text-decoration: none;
-    color: #333;
+    /*color: #333;*/
+    color: #0D99FF;
     font-size: 16px;
-    margin-top: 10px; /* 각 링크 요소 사이에 10px 간격을 추가합니다 */
+    
+}
+
+.top a{
+    margin-top: 20px;
+}
+
+.bottom a{
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .title a:hover {
     color: #555;
+}
+
+
+/*선 만들기*/
+
+.title-container {
+    position: relative;
+}
+
+.title-container::before,
+.title-container::after {
+    content: '';
+    position: absolute;
+    left: calc(-50vw + 50%);
+    width: 100vw; /* 화면의 전체 너비를 선의 너비로 지정 */
+    height: 1px; /* 선의 두께 */
+    background-color: #E6E6E6;
+    z-index: -1; /* 선이 요소의 뒤에 있도록 z-index 조절 */
+}
+
+.title-container::before {
+    top: -10px; /* 필요에 따라 조정 */
+}
+
+.title-container::after {
+    bottom: -10px; /* 필요에 따라 조정 */
 }

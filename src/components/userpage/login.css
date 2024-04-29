@@ -68,7 +68,7 @@ button {
 
 input {
   background-color: #ffffff;
-  color: #828282;
+  color: #000000;
   border: 1px solid #E0E0E0; /* border 선 굵기를 1px로 설정 */
   border-radius: 8px; /* border radius를 8px로 설정 */
   padding: 12px 15px;
