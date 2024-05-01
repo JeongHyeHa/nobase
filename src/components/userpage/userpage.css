@@ -58,7 +58,7 @@
 
 
 /*선 만들기*/
-
+/*
 .title-container {
     position: relative;
 }
@@ -68,16 +68,17 @@
     content: '';
     position: absolute;
     left: calc(-50vw + 50%);
-    width: 100vw; /* 화면의 전체 너비를 선의 너비로 지정 */
-    height: 1px; /* 선의 두께 */
+    width: 100vw; 
+    height: 1px; 
     background-color: #E6E6E6;
-    z-index: -1; /* 선이 요소의 뒤에 있도록 z-index 조절 */
+    z-index: -1; 
 }
 
 .title-container::before {
-    top: -10px; /* 필요에 따라 조정 */
+    top: -10px; 
 }
 
 .title-container::after {
-    bottom: -10px; /* 필요에 따라 조정 */
+    bottom: -10px; 
 }
+*/

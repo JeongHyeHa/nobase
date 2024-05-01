@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './login.css';
 import LoginPage from './googleloginbutton';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -9,6 +10,7 @@ const Login = () => {
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     const handleUserIdChange = (e) => {
         setUserId(e.target.value);
@@ -51,6 +53,7 @@ const Login = () => {
             setUserId('');
             setPassword('');
             setErrorMessage(''); // 에러 메시지 초기화
+            navigate('/loging');
         /*} catch (error) {
             console.error('로그인 요청 실패:', error);
             // 에러 처리 로직을 추가할 수 있습니다.
