@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import profile from '../../assets/image/profile.jpg';
 import './loging.css';
+import Header from '../../components/mainpage/header';
+
 
 function Loging() {
     const [userID, setUserID] = useState('');
@@ -33,9 +35,7 @@ function Loging() {
 
     return (
         <div className="main-container">
-            <header className="main-header">
-                <h1>Soon Market</h1>
-            </header>
+            <Header />
             <main>
                 <div className="profile-image-container">
                     <img src={profile} alt="프로필 사진" className="profile-image" />

@@ -3,7 +3,8 @@ import './login.css';
 import LoginPage from './googleloginbutton';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import Header from '../../components/mainpage/header';
+import Navigation from '../../components/mainpage/navigation';
 
 
 const Login = () => {
@@ -63,9 +64,7 @@ const Login = () => {
 
     return (
         <div className="main-container">
-            <header className="main-header">
-                <h1>Soon Market</h1>
-            </header>
+            <Header />
             <main>
                 <div className='login'>
                     <div className='login_md_id'>

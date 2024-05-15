@@ -2,36 +2,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding-top: 60px; 
+    padding-bottom: 40px;
 }
 
-/* 헤더 스타일 */
-.main-header {
-    background-color: #20b6ea;
-    color: #fff;
-    padding: 40px; /*상단바 넓이*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
-
-.main-header h1 {
-    margin: 0;
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-}
-
-.search-form input {
-    padding: 10px;
-}
 
 /* 메인 컨텐츠 스타일 */
 .main-container {
@@ -56,65 +30,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
 }
 
-/* 내비게이션 스타일 */
-.navigation {
-    background-color: #f2f2f2; /* 배경색 설정 */
-    padding: 10px; /* 내부 여백 설정 */
-    position: fixed; /* 고정 위치 설정 */
-    bottom: 0; /* 하단에 위치 */
-    left: 0; /* 좌측 정렬 */
-    right: 0; /* 우측 정렬 */
-    z-index: 1; /* z-index 설정 */
-}
 
-.navigation ul {
-    list-style-type: none; /* 리스트 스타일 제거 */
-    margin: 0; /* 외부 여백 초기화 */
-    padding: 0; /* 내부 여백 초기화 */
-    display: flex; /* 플렉스 박스로 설정하여 내부 아이템들을 가로로 배열 */
-    justify-content: space-between; /* 내부 아이템들을 가로로 균등 분할하여 배치 */
-    max-width: 800px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 가운데 정렬 */
-    align-items: center; /* 수직 가운데 정렬 */
-}
-
-.navigation li {
-    margin: 0; /* 외부 여백 초기화 */
-}
-
-
-/*경로 아이콘 설정*/
-.icon-container {
-    width: 24px; /* 아이콘의 너비를 조절 */
-    height: 24px; /* 아이콘의 높이를 조절 */
-    display: flex;
-    align-items: center;
-}
-
-.icon-container svg {
-    width: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
-    height: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
-}
-
-/*버튼 아이콘 설정*/
-.icon-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-
-.icon-button img {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 조절 */
-}
-
-.icon-button span {
-    font-size: 16px; /* 텍스트 크기 조절 */
-}
 
 
 /* 글쓰기 버튼 */
@@ -189,19 +105,6 @@ body {
 
 /* 반응형 웹 디자인 */
 @media (max-width: 768px) {
-    .main-header {
-        flex-direction: row;
-        align-items: center;
-        padding: 10px;
-    }
-
-    /* 검색창 */
-    .search-form {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-    }
-
     .main-container {
         padding-top: 70px; /* 헤더 높이 증가에 따른 패딩 조정 */
     }
