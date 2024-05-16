@@ -1,14 +1,14 @@
 import React from 'react';
 import './header.css';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
     return (
         <header className="main-header">
-            <h1>Soon Market</h1>
-            <form className="search-form">
-                <input type="text" placeholder="검색어 입력" />
-            </form>
+            <Link to="/">
+                <span><h1>Soon Market</h1></span>
+            </Link>
         </header>
     );
 };

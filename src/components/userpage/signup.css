@@ -1,0 +1,52 @@
+/* 메인 컨텐츠 스타일 */
+.signup-container {
+    font-family: Arial, sans-serif;
+    max-width: 1920px; /* 최대 너비를 설정 */
+    margin: 0 auto; /* 상단바와 하단바 사이 중앙 정렬 */
+    padding: 10px 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    top: 70px;
+    bottom: 0; /* 화면 아래쪽에 고정 */
+    left: 0;
+    right: 0;
+    overflow-y: auto; /* 세로 스크롤이 내용이 넘칠 때만 표시됨 */
+}
+
+.form-elements {
+    padding-top: 70px;
+} 
+
+.form-element {
+    margin-bottom: 15px;
+}
+.form-control {
+    width: 60%;
+    max-width: 400px;
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+
+.bt-form-control {
+    width: 60%;
+    max-width: 400px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: #090909;
+    color: #fff;
+    margin-top: 15px;
+}
+
+/* singup에 마우스 커너 올리면 커서 활성화 */
+.bt-form-control:hover {
+    cursor: pointer;
+}
+
+/* 모바일 반응형 웹 디자인
+@media (max-width: 768px) {
+    .signup-container {
+        padding-top: 30%; 
+    }
+} */

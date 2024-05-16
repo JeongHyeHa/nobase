@@ -10,18 +10,22 @@
     left: 0;
     right: 0;
     z-index: 1;
-    border-bottom: 1px solid #E6E6E6;
+    border-bottom: 1px solid #ccc;
 }
 
 .main-header h1 {
     margin: 0;
+    text-align: center; 
+    display: inline-block;
+    color: #000000;
 }
 
-.search-form {
-    display: flex;
-    align-items: center;
-}
 
-.search-form input {
-    padding: 10px;
+/* 반응형 웹 디자인 */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
 }

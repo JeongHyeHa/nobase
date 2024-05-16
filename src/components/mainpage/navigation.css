@@ -1,27 +1,51 @@
 /* 내비게이션 스타일 */
 .navigation {
-    background-color: #f2f2f2; /* 배경색 설정 */
-    padding: 10px; /* 내부 여백 설정 */
-    position: fixed; /* 고정 위치 설정 */
-    bottom: 0; /* 하단에 위치 */
-    left: 0; /* 좌측 정렬 */
-    right: 0; /* 우측 정렬 */
-    z-index: 1; /* z-index 설정 */
+    background-color: #f2f2f2; 
+    padding: 10px; 
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1;
 }
 
 .navigation ul {
-    list-style-type: none; /* 리스트 스타일 제거 */
-    margin: 0; /* 외부 여백 초기화 */
-    padding: 0; /* 내부 여백 초기화 */
-    display: flex; /* 플렉스 박스로 설정하여 내부 아이템들을 가로로 배열 */
-    justify-content: space-between; /* 내부 아이템들을 가로로 균등 분할하여 배치 */
-    max-width: 800px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 가운데 정렬 */
-    align-items: center; /* 수직 가운데 정렬 */
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto; 
+    /* align-items: center;  */
 }
 
 .navigation li {
     margin: 0; /* 외부 여백 초기화 */
+}
+
+.navigation a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #176B87; /* 링크 텍스트 색상 설정 */
+}
+
+.user-icon-container {
+    position: relative; /* 상위 컨테이너에 대한 위치 설정 */
+}
+
+.user-write-button {
+    position: absolute; /* 절대 위치 설정 */
+    top: -10px; /* 상단 위치 설정 */
+    right: -10px; /* 우측 위치 설정 */
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+    width: 25px; /* 너비 설정 */
+    height: 20px; /* 높이 설정 */
+    border-radius: 50%; /* 원형 모양으로 설정 */
+    background-color: #125c72; /* 배경색 설정 */
+    color: #fff; /* 텍스트 색상 설정 */
+    text-decoration: none; /* 텍스트에 밑줄 제거 */
+    line-height: 20px; /* 텍스트 세로 가운데 정렬 */
+    font-size: 14px; /* 텍스트 크기 설정 */
 }
 
 
@@ -37,6 +61,7 @@
     width: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
     height: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
 }
+
 
 /*버튼 아이콘 설정*/
 .icon-button {

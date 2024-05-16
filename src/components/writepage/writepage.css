@@ -1,29 +1,46 @@
-.write-page {
+.main-container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    overflow-y: auto; /* 세로 스크롤이 내용이 넘칠 때만 표시됨 */
 }
 
+.write-page {
+    padding-top: 40px;
+    padding-bottom: 50px; /* 하단 여백 추가 */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* height: 500px; */ /* 높이 설정 제거 */
+}
+
+
 .write-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
+    align-items: center;
+    
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 51px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 label {
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .form-control {
-    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* 내용 영역과 패딩의 크기를 상자의 크기로 설정 */
+    box-sizing: border-box;
+    flex-grow: 1; 
 }
 
 .form-control-file {
@@ -52,7 +69,7 @@ label {
 
 /* 카테고리 스타일 */
 .category-checkbox {
-    display: none; /* 기존 체크박스를 숨깁니다 */
+    display: none;
 }
 
 .category-label {
@@ -93,19 +110,8 @@ label {
     background-color: #f0f0f0;
 }
 
-/* 카테고리 선택박스들 가로 정렬 */
-.form-group {
-    display: flex;
-    flex-wrap: wrap; /* 요소들이 넘치면 다음 줄로 넘어가도록 설정 */
-}
-
 /* 카테고리 밑에 체크박스 표시 */
 .form-group input[type="checkbox"] {
     display: inline-block;
-    margin-top: 40px; /* 체크박스와 라벨 사이의 간격 조절 */
+    margin-top: 40px;
 }
-
-/*.form-group #name,#price {*/
-/*    display: block;*/
-/*    margin-top: 20px; !* 이름,가격 입력 필드를 위로 이동시킴 *!*/
-/*}*/

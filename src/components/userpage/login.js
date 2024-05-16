@@ -4,7 +4,6 @@ import LoginPage from './googleloginbutton';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/mainpage/header';
-import Navigation from '../../components/mainpage/navigation';
 
 
 const Login = () => {

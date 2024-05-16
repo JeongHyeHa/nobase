@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import profile from '../../assets/image/profile.jpg';
 import './loging.css';
 import Header from '../../components/mainpage/header';
+import Navigation from '../../components/mainpage/navigation';
 
 
 function Loging() {
@@ -69,6 +70,7 @@ function Loging() {
                     </div>
                 </div>
             </main>
+            <Navigation />
         </div>
     );
 }

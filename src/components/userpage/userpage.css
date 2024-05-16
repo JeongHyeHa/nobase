@@ -10,10 +10,6 @@
     text-align: center; /* 내부 요소들을 가운데 정렬합니다 */
 }
 
-.main-header {
-    margin-bottom: 10px; /* header 아래에 10px 간격을 추가합니다 */
-}
-
 .profile-image-container {
     width: 100px;
     height: 100px;

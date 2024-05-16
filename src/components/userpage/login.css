@@ -62,19 +62,19 @@ button {
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   width: 100%; 
-  margin-top: 16px; /* 버튼 위쪽 여백 설정 */
-  margin-bottom: 16px; /* 버튼 아래쪽 여백 설정 */
+  margin-top: 16px; 
+  margin-bottom: 16px; 
 }
 
 input {
   background-color: #ffffff;
   color: #000000;
-  border: 1px solid #E0E0E0; /* border 선 굵기를 1px로 설정 */
-  border-radius: 8px; /* border radius를 8px로 설정 */
+  border: 1px solid #E0E0E0; 
+  border-radius: 8px; 
   padding: 12px 15px;
   margin: 8px 0;
-  width: 100%; /* 입력란의 너비를 100%로 설정 */
-  margin-bottom: 10px; /* 입력란과 버튼 사이의 간격을 10px로 설정 */
+  width: 100%; 
+  margin-bottom: 10px; 
 }
 
 

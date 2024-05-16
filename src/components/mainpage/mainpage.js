@@ -3,10 +3,64 @@ import React, { useState } from 'react'; // useState를 추가
 import Header from '../../components/mainpage/header';
 import Navigation from '../../components/mainpage/navigation';
 
-
+const Sidebar = ({ show }) => {
+    const style = { left: show ? '0' : '-250px' };
+    return (
+      <div className="sidebar" style={style}>
+        <ul>
+          <li><button>의류</button></li>
+          <li><button>신발</button></li>
+          <li><button>기프트카드</button></li>
+          <li><button>전자제품</button></li>
+          <li><button>책</button></li>
+          <li><button>생활용품</button></li>
+          <li><button>기타</button></li>
+        </ul>
+      </div>
+    );
+  };
+  
+  const ProductList = () => {
+    const products = ["중고 물품 1", "중고 물품 2", "중고 물품 3", "중고 물품 4"];
+    return (
+      <div className="product-list">
+        {products.map((product, index) => (
+          <div className="product-item" key={index}>
+            {product}
+          </div>
+        ))}
+      </div>
+    );
+  };
 
 const MainPage = () => {
     const [showCategory, setShowCategory] = useState(false);
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
+
+    // Minimum swipe distance
+    const minSwipeDistance = 50;
+
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStart - touchEnd > minSwipeDistance) {
+            // Left swipe
+            setShowCategory(false);
+        } else if (touchEnd - touchStart > minSwipeDistance) {
+            // Right swipe
+            setShowCategory(true);
+        }
+        // Reset
+        setTouchStart(null);
+        setTouchEnd(null);
+    };
 
     const toggleCategory = () => {
         setShowCategory(!showCategory);
@@ -18,42 +72,13 @@ const MainPage = () => {
     };
     
     return (
-        <div className="main-container">
+        <div className="main-container"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}>
             <Header />
-            <div className="sidebar" style={categoryStyle}>
-                <ul>
-                    <li><button>의류</button></li>
-                    <li><button>신발</button></li>
-                    <li><button>기프트카드</button></li>
-                    <li><button>전자제품</button></li>
-                    <li><button>책</button></li>
-                    <li><button>생활용품</button></li>
-                    <li><button>기타</button></li>
-                </ul>
-            </div>
-
-            <main>
-                <div className="product-list">
-                    <div className="product-item">
-                        {/* 중고 물품 1 */}
-                    </div>
-                    <div className="product-item">
-                        {/* 중고 물품 2 */}
-                    </div>
-                    <div className="product-item">
-                        {/* 중고 물품 3 */}
-                    </div>
-                    <div className="product-item">
-                        {/* 중고 물품 4 */}
-                    </div>
-                    <div className="product-item">
-                        {/* 중고 물품 4 */}
-                    </div>
-                    <div className="product-item">
-                        {/* 중고 물품 4 */}
-                    </div>
-                </div>
-            </main>
+            <Sidebar show={showCategory} />
+            <ProductList />
             <Navigation />
         </div>
     );
