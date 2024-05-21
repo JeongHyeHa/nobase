@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import './navigation.css';
+import Login from '../userpage/login';
+import Userpage from '../userpage/userpage';
 import { ReactComponent as Home } from '../../assets/icon/Home.svg';
 import { ReactComponent as Category } from '../../assets/icon/Category.svg';
 import { ReactComponent as Chat} from '../../assets/icon/Chat.svg';
@@ -7,12 +10,13 @@ import { ReactComponent as User} from '../../assets/icon/User.svg';
 import { ReactComponent as WritePage} from '../../assets/icon/write.svg';
 
 const Navigation = ({toggleCategory }) => {
+    const [cookies] = useCookies(['user']);
 
     const navigateToHome = () => {
         window.location='/home';
     };
     const navigateToUser = () => {
-        window.location='/User';
+        window.location='/user';
     };
     const navigateTowrite =() =>{
         window.location='/write'

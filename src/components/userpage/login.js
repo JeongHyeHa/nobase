@@ -3,14 +3,15 @@ import './login.css';
 import LoginPage from './googleloginbutton';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 import Header from '../../components/mainpage/header';
-
 
 const Login = () => {
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
+    const [cookies, setCookie] = useCookies(['user']);
 
     const handleUserIdChange = (e) => {
         setUserId(e.target.value);
@@ -33,33 +34,28 @@ const Login = () => {
             alert('비밀번호를 입력해주세요.'); // 경고창으로 메시지 출력
             return;
         }
-    
-        /*try {
-            // 서버로 전송할 데이터 객체 생성
-            const userData = {
-                userId: userId,
-                password: password
-            };
-    
-            // Axios를 사용하여 POST 요청을 보냅니다.
-            const response = await axios.post('/api/login', userData);
-    
-            // 요청에 대한 응답 처리
-            console.log(response.data); // 서버로부터 받은 응답 데이터를 출력합니다.
-    
-            // 로그인 성공 후 리다이렉트 또는 다른 동작을 수행할 수 있습니다.
-    */
+
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId, password })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            setCookie('user', data.token, { path: '/' });
             // 로그인 성공 후 입력 칸 비우기
             setUserId('');
             setPassword('');
-            setErrorMessage(''); // 에러 메시지 초기화
+            setErrorMessage(''); 
             navigate('/loging');
-        /*} catch (error) {
-            console.error('로그인 요청 실패:', error);
-            // 에러 처리 로직을 추가할 수 있습니다.
-        }*/
+        } else {
+            alert('로그인을 실패하였습니다. 다시 시도해주세요.');
+            console.error('Login failed');
+        }
     };
-    
 
     return (
         <div className="main-container">
@@ -100,14 +96,6 @@ const Login = () => {
                     <div className='google_btn'>
                         <LoginPage className='google_img'/>
                     </div>
-                    {/*<div className="terms">
-                    <p>
-                        By clicking continue, you agree to our 
-                        <span id="TermsOfService"> <a href='#'>Terms of Service</a></span>
-                        , and 
-                        <span id="PrivacyPolicy"> <a href = '#'>Privacy Policy</a></span>
-                    </p>
-                    </div>*/}
                 </div>
             </main>
         </div>
