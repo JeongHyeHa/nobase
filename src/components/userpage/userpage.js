@@ -1,79 +1,69 @@
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
-import profile from '../../assets/image/profile.jpg';
 import './userpage.css';
+import profile from '../../assets/image/profile.jpg';
+import rightIcon from '../../assets/icon/right.png'; 
 import Header from '../mainpage/header';
 import Navigation from '../mainpage/navigation';
 
 function Userpage() {
-    const [userID, setUserID] = useState('');
-    const [userEmail, setUserEmail] = useState('');
-    const [userPhone, setUserPhone] = useState('');
-    const [userAddr, setUserAddr] = useState('');
-    const [userProduct, setUserProduct] = useState('');
+    const [cookies, setCookie, removeCookie] = useCookies(['user', 'name', 'email', 'phone', 'address']);
+    const name = cookies.name || 'Helena Hills';
+    const email = cookies.email || 'name@domain.com';
+    const phone = cookies.phone || '010-0000-0000';
+    const address = cookies.address || '주소를 입력해주세요';
 
-    const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const navigate = useNavigate();
 
-    const handleLogout = () => {    //로그아웃 버튼을 클릭했을 때 쿠키가 제거되며 홈 페이지로 리디렉션
+    const handleLogout = () => {
         removeCookie('user', { path: '/' });
-        navigate('/'); // 홈 페이지로 리디렉션
-    };
-
-    const fetchUserData = async () => {
-        try {
-            const response = await fetch('/api/8080');
-            const data = await response.json();
-
-            // 상태 업데이트
-            setUserID(data.userID);
-            setUserEmail(data.userEmail);
-            setUserPhone(data.userPhone);
-            setUserAddr(data.userAddr);
-            setUserProduct(data.userProduct);
-        } catch (error) {
-            console.error('Error fetching user data:', error);
-        }
+        navigate('/'); 
     };
 
     useEffect(() => {
-        fetchUserData();
-    }, []);
+        setCookie('name', 'Helena Hills', { path: '/', expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) });
+        setCookie('email', 'name@domain.com', { path: '/', expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) });
+        setCookie('phone', '010-0000-0000', { path: '/', expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) });
+    }, [setCookie]);
 
     return (
         <div className="main-container">
             <Header />
             <main>
-                <div className="profile-image-container">
+                <div className="profile">
                     <img src={profile} alt="프로필 사진" className="profile-image" />
                 </div>
                 
-                <div className="profile-buttons">
-                    <button className="edit-profile-button">Edit Profile</button>
-                    <button className="logout-button" onClick={handleLogout}>Log Out</button>
+                <div className="edit-logout">
+                    <button className="edit">Edit Profile</button>
+                    <button className="logout" onClick={handleLogout}>Log Out</button>
                 </div>
                 
-                <div className="user-info-container">
-                    <div className="user-info-item">
-                        <span className="label">Name</span>
-                        <span className="value">{userID}</span>
+                <div className="info">
+                    <div className="info-item">
+                        <p className="label"><strong>Name:</strong></p>
+                        <p className="value">{name}</p>
                     </div>
-                    <div className="user-info-item">
-                        <span className="label">Email</span>
-                        <span className="value">{userEmail}</span>
+                    <div className="info-item">
+                        <p className="label"><strong>Email:</strong></p>
+                        <p className="value">{email}</p>
                     </div>
-                    <div className="user-info-item">
-                        <span className="label">Phone</span>
-                        <span className="value">{userPhone}</span>
+                    <div className="info-item">
+                        <p className="label"><strong>Phone:</strong></p>
+                        <p className="value">{phone}</p>
                     </div>
-                    <div className="user-info-item">
-                        <span className="label">Address</span>
-                        <span className="value">{userAddr}</span>
+                    <div className="info-item">
+                        <p className="label"><strong>Address:</strong></p>
+                        <p className="value">{address}</p>
                     </div>
-                    <div className="user-info-item">
-                        <span className="label">Products</span>
-                        <span className="value">{userProduct}</span>
+                    <div className="info-item last">
+                        <p className="label"><strong>Products:</strong></p>
+                        <p className="value">
+                            <a href="/products">
+                                {/* <img src={rightIcon} alt="Right arrow" className="right-icon" /> */}
+                            </a>
+                        </p>
                     </div>
                 </div>
             </main>

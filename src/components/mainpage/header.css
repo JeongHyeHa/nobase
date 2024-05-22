@@ -2,7 +2,9 @@
     background-color: #ffffff;
     color: #000000;
     padding: 30px; 
-    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;  /* 여기를 수정해야 컴포넌트 겹침 현상 해결할 수 있을 듯 */
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -10,7 +12,6 @@
     left: 0;
     right: 0;
     z-index: 1;
-    border-bottom: 1px solid #ccc;
 }
 
 .main-header h1 {
