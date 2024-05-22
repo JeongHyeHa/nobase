@@ -1,3 +1,10 @@
-.layout{
-    padding-top: 150px;
+.layout {
+    padding-top: 150px; /* Header와 Navigation의 공간을 확보 */
+    padding-bottom: 60px; 
+}
+
+main {
+    min-height: calc(100vh - 210px); /* Header와 Navigation의 높이를 뺀 값 */
+    margin-top: 150px; 
+    margin-bottom: 60px;
 }

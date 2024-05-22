@@ -2,11 +2,13 @@
 .navigation {
     background-color: #f2f2f2; 
     padding: 10px; 
+    
     position: fixed;
     bottom: 0; 
     left: 0; 
     right: 0; 
-    z-index: 1;
+    z-index: 1000;
+    width: 100%;
 }
 
 .navigation ul {
@@ -17,7 +19,6 @@
     justify-content: space-between;
     max-width: 800px;
     margin: 0 auto; 
-    /* align-items: center;  */
 }
 
 .navigation li {
@@ -25,8 +26,8 @@
 }
 
 .navigation a {
-    text-decoration: none; /* 링크 밑줄 제거 */
-    color: #176B87; /* 링크 텍스트 색상 설정 */
+    text-decoration: none; 
+    color: #176B87; 
 }
 
 .user-icon-container {
@@ -59,7 +60,7 @@
 
 .icon-container svg {
     width: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
-    height: 100%; /* 이미지가 부모 요소에 꽉 차도록 설정 */
+    height: 100%; 
 }
 
 
