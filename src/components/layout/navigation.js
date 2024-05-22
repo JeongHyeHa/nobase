@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import './navigation.css';
-import Login from '../userpage/login';
-import Userpage from '../userpage/userpage';
 import { ReactComponent as Home } from '../../assets/icon/Home.svg';
 import { ReactComponent as Category } from '../../assets/icon/Category.svg';
 import { ReactComponent as Chat} from '../../assets/icon/Chat.svg';

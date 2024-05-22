@@ -11,16 +11,16 @@
 
 .main-container {
     display: flex;
-    flex-direction: column; /*가로 배치*/
-    align-items: center;    /*수직정렬*/
-    justify-content: center;    /*수평정렬 */
+    flex-direction: column; /* 수직 정렬 */
+    align-items: center;    /* 수평 정렬 */
+    justify-content: center; 
     margin: 0 auto;
     background-color: #fff;    
     padding: 20px; 
     width: 500px;
 }
 
-/*프로필 이미지*/
+/* 프로필 이미지 */
 .profile {
     display: flex;
     justify-content: center;
@@ -29,17 +29,17 @@
 }
 
 .profile-image {
-    width: 100px;   /*수정 %->px*/
+    width: 100px;   /* 수정 %->px */
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-/*Edit Profile, Log Out 버튼*/
+/* Edit Profile, Log Out 버튼 */
 .edit-logout {
     display: flex;
     align-items: center;
-    justify-content: space-between; /*양쪽 정렬*/
+    justify-content: space-between; /* 양쪽 정렬 */
     width: 100%;
     margin: 20px 0;
 }
@@ -55,18 +55,18 @@
     margin: 0 5px;
     text-align: center;
 }
-.edit{
+.edit {
     color: #0D99FF;
 }
 
-.logout{
+.logout {
     color: #FF0D1C;
 }
 
-/*사용자 정보*/
+/* 사용자 정보 */
 .info {
     display: flex;
-    flex-direction: column; /*가로 배치*/
+    flex-direction: column; /* 수직 정렬 */
     width: 100%;
     margin-top: 20px;
 }
@@ -87,4 +87,11 @@
 .value {
     text-align: right;
     color: #333;
+}
+
+.right-icon{
+    width: 100px;   /* 수정 %->px */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
 }

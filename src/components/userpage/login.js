@@ -4,7 +4,7 @@ import LoginPage from './googleloginbutton';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import Header from '../../components/mainpage/header';
+import Header from '../layout/header';
 
 const Login = () => {
     const [userId, setUserId] = useState('');

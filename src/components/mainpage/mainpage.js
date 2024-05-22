@@ -1,7 +1,7 @@
 import './mainpage.css';
-import React, { useState } from 'react'; // useState를 추가
-import Header from '../../components/mainpage/header';
-import Navigation from '../../components/mainpage/navigation';
+import React, { useState } from 'react';
+import Layout from '../layout/layout';
+
 
 const Sidebar = ({ show }) => {
     const style = { left: show ? '0' : '-250px' };
@@ -76,10 +76,10 @@ const MainPage = () => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}>
-            <Header />
-            <Sidebar show={showCategory} />
-            <ProductList />
-            <Navigation />
+            <Layout >
+              <Sidebar show={showCategory} />
+              <ProductList />
+            </ Layout>
         </div>
     );
 };

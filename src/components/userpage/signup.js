@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../../components/mainpage/header';
+import Header from '../layout/header';
 import './signup.css';
 
 function SingupPage() {

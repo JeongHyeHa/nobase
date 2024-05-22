@@ -3,9 +3,9 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import './userpage.css';
 import profile from '../../assets/image/profile.jpg';
-import rightIcon from '../../assets/icon/right.png'; 
-import Header from '../mainpage/header';
-import Navigation from '../mainpage/navigation';
+// import rightIcon from '../../assets/icon/right.png'; 
+import { ReactComponent as right} from '../../assets/icon/right.svg';
+import Layout from '../layout/layout';
 
 function Userpage() {
     const [cookies, setCookie, removeCookie] = useCookies(['user', 'name', 'email', 'phone', 'address']);
@@ -28,9 +28,8 @@ function Userpage() {
     }, [setCookie]);
 
     return (
-        <div className="main-container">
-            <Header />
-            <main>
+        <Layout>
+            <div className="main-container">
                 <div className="profile">
                     <img src={profile} alt="프로필 사진" className="profile-image" />
                 </div>
@@ -60,15 +59,12 @@ function Userpage() {
                     <div className="info-item last">
                         <p className="label"><strong>Products:</strong></p>
                         <p className="value">
-                            <a href="/products">
-                                {/* <img src={rightIcon} alt="Right arrow" className="right-icon" /> */}
-                            </a>
+                            <a href="/products"><right /></a>
                         </p>
                     </div>
                 </div>
-            </main>
-            <Navigation />
-        </div>
+            </div>
+        </Layout>
     );
 }
 

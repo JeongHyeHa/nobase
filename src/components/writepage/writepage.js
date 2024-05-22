@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './writepage.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Header from '../../components/mainpage/header';
-import Navigation from '../../components/mainpage/navigation';
+import Layout from '../layout/layout';
 
 function WritePage() {
     const [title, setTitle] = useState('');
@@ -72,137 +71,137 @@ function WritePage() {
     };
 
     return (
-        <div className="main-container">
-            <Header />
-            <div className="write-page">
-                <form className="write-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="title">제목</label>
-                        <input
-                            type="text"
-                            placeholder="제목을 입력해 주세요"
-                            id="title"
-                            name="title"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="content">내용</label>
-                        <textarea
-                            id="content"
-                            placeholder="내용을 입력해 주세요"
-                            name="content"
-                            rows="5"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            className="form-control"
-                        ></textarea>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="price">가격</label>
-                        <input
-                            type="text"
-                            placeholder="가격을 입력해 주세요"
-                            id="price"
-                            name="price"
-                            value={price}
-                            onChange={handlePriceChange}
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="image">이미지</label>
-                        <input
-                            type="file"
-                            id="image"
-                            name="image"
-                            accept="image/*"
-                            onChange={handleImageChange}
-                            className="form-control-file"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>카테고리</label>
-                        <div>
+        <Layout >
+            <div className="main-container">
+                <div className="write-page">
+                    <form className="write-form" onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <label htmlFor="title">제목</label>
                             <input
-                                type="checkbox"
-                                id="textbook"
-                                name="category"
-                                value="textbook"
-                                onChange={handleCategoryChange}
+                                type="text"
+                                placeholder="제목을 입력해 주세요"
+                                id="title"
+                                name="title"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                                className="form-control"
                             />
-                            <label htmlFor="textbook">교재</label>
                         </div>
-                        <div>
+                        <div className="form-group">
+                            <label htmlFor="content">내용</label>
+                            <textarea
+                                id="content"
+                                placeholder="내용을 입력해 주세요"
+                                name="content"
+                                rows="5"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                                className="form-control"
+                            ></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="price">가격</label>
                             <input
-                                type="checkbox"
-                                id="household"
-                                name="category"
-                                value="household"
-                                onChange={handleCategoryChange}
+                                type="text"
+                                placeholder="가격을 입력해 주세요"
+                                id="price"
+                                name="price"
+                                value={price}
+                                onChange={handlePriceChange}
+                                className="form-control"
                             />
-                            <label htmlFor="household">생활용품</label>
                         </div>
-                        <div>
+                        <div className="form-group">
+                            <label htmlFor="image">이미지</label>
                             <input
-                                type="checkbox"
-                                id="gift"
-                                name="category"
-                                value="gift"
-                                onChange={handleCategoryChange}
+                                type="file"
+                                id="image"
+                                name="image"
+                                accept="image/*"
+                                onChange={handleImageChange}
+                                className="form-control-file"
                             />
-                            <label htmlFor="gift">기프티콘</label>
                         </div>
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="electronics"
-                                name="category"
-                                value="electronics"
-                                onChange={handleCategoryChange}
-                            />
-                            <label htmlFor="electronics">전자기기</label>
+                        <div className="form-group">
+                            <label>카테고리</label>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="textbook"
+                                    name="category"
+                                    value="textbook"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="textbook">교재</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="household"
+                                    name="category"
+                                    value="household"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="household">생활용품</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="gift"
+                                    name="category"
+                                    value="gift"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="gift">기프티콘</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="electronics"
+                                    name="category"
+                                    value="electronics"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="electronics">전자기기</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="clothing"
+                                    name="category"
+                                    value="clothing"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="clothing">의류</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="shoes"
+                                    name="category"
+                                    value="shoes"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="shoes">신발</label>
+                            </div>
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    id="others"
+                                    name="category"
+                                    value="others"
+                                    onChange={handleCategoryChange}
+                                />
+                                <label htmlFor="others">기타</label>
+                            </div>
                         </div>
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="clothing"
-                                name="category"
-                                value="clothing"
-                                onChange={handleCategoryChange}
-                            />
-                            <label htmlFor="clothing">의류</label>
-                        </div>
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="shoes"
-                                name="category"
-                                value="shoes"
-                                onChange={handleCategoryChange}
-                            />
-                            <label htmlFor="shoes">신발</label>
-                        </div>
-                        <div>
-                            <input
-                                type="checkbox"
-                                id="others"
-                                name="category"
-                                value="others"
-                                onChange={handleCategoryChange}
-                            />
-                            <label htmlFor="others">기타</label>
-                        </div>
-                    </div>
-                    <button type="submit" className="btn btn-primary">
-                        글쓰기
-                    </button>
-                </form>
+                        <button type="submit" className="btn btn-primary">
+                            글쓰기
+                        </button>
+                    </form>
+                </div>
             </div>
-            <Navigation />
-        </div>
+        </ Layout>
     );
 }
 
