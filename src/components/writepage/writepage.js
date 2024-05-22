@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './writepage.css';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Layout from '../layout/layout';
 
