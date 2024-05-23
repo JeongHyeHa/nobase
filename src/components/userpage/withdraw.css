@@ -160,6 +160,12 @@ h2 {
 
 .confirm-btn {
   background-color: #DFDFE0;
-  color: #afafaf;
+  color: #9b9b9b;
   max-width: 150px; 
+}
+
+.confirm-btn.enabled {
+  background-color: #ff0000; 
+  color: white;
+  cursor: pointer;
 }
