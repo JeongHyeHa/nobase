@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie';
 import Layout from '../layout/layout';
 import { ReactComponent as XClose } from '../../assets/icon/x.svg';
 import alertIcon from '../../assets/icon/alert.png';
+import xIcon from '../../assets/icon/x.png'
 
 function Withdraw({ onClose }) {
   const [inputValue, setInputValue] = useState('');
@@ -25,7 +26,7 @@ function Withdraw({ onClose }) {
     <Layout>
       <div className="modal">
         <div className="modal-content">
-          <button className="x-button" onClick={onClose}><XClose /></button>
+          <button className="x-button" onClick={onClose}><img src={xIcon} alt="xIcon" className="xIcon" /></button>
           <div className="header">
             <h1>정말로 계정을 삭제할까요?</h1>
           </div>

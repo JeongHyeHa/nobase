@@ -59,7 +59,7 @@ const Login = () => {
 
     return (
         <Layout>
-            <div className="main-container">
+            <div className="login-container">
                 <div className='login'>
                     <div className='login_md_id'>
                         <input
@@ -85,7 +85,7 @@ const Login = () => {
                         Login
                     </button>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
-                    <div className="login-container">
+                    <div className="center-container">
                         <div className="line"></div>
                         <div className="title">
                             <Link to="/signup" className='_title'>Sign Up</Link>
