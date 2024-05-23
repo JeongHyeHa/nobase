@@ -3,17 +3,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding-top: 60px; 
-    /* padding-bottom: 40px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* 메인 컨텐츠 스타일 */
-.main-container {
-    max-width: 1920px; /* 최대 너비를 설정 */
-    margin: 0 auto;/* 상단바와 하단바 사이 중앙 정렬 */
-    padding: 0px;/* 전체적인 내부 여백 */
-    padding-top: 150px; /* 헤더 높이만큼 패딩 추가 */
-    padding-bottom: 150px; /* 글쓰기 버튼 높이만큼 패딩 추가 */
+.mainpage-container {
+    /* max-width: 1920px;  */
+    max-width: 600px;
+    margin: 0 auto;
+    /* padding: 0px;
+    padding-top: 60px; 
+    padding-bottom: 150px;  */
+    padding: 10px 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    overflow-y: auto;
+
+    transition: margin-left 0.3s ease; 
 }
 
 .product-list {
@@ -34,7 +46,7 @@ body {
 /* 반응형 웹 디자인 */
 @media (max-width: 768px) {
     .main-container {
-        padding-top: 70px; /* 헤더 높이 증가에 따른 패딩 조정 */
+        padding-top: 20px; /* 헤더 높이 증가에 따른 패딩 조정 */
     }
 
     /* 판매 목록창 */
@@ -42,16 +54,6 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
-
-/*.category-section {
-    position: fixed;
-    top: 0;
-    left: -300px; !* 왼쪽으로 숨겨짐 *!
-    width: 300px; !* 카테고리 영역의 너비 *!
-    height: 100%;
-    background-color: #fff;
-    transition: left 0.3s ease; !* 왼쪽으로 나타나고 숨겨질 때의 애니메이션 효과 *!
-}*/
 
 /* 사이드바 스타일 */
 .sidebar {
@@ -66,10 +68,6 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 설정 */
 }
 
-/* 메인 컨테이너 스타일 */
-.main-container {
-    transition: margin-left 0.3s ease; /* 왼쪽 여백 전환에 대한 애니메이션 설정 */
-}
 
 /* 카테고리 버튼을 클릭하여 사이드바가 열렸을 때 */
 .main-container.sidebar-open {

@@ -4,7 +4,7 @@ import LoginPage from './googleloginbutton';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import Header from '../layout/header';
+import Layout from '../layout/layout';
 
 const Login = () => {
     const [userId, setUserId] = useState('');
@@ -58,9 +58,8 @@ const Login = () => {
     };
 
     return (
-        <div className="main-container">
-            <Header />
-            <main>
+        <Layout>
+            <div className="main-container">
                 <div className='login'>
                     <div className='login_md_id'>
                         <input
@@ -89,7 +88,7 @@ const Login = () => {
                     <div className="login-container">
                         <div className="line"></div>
                         <div className="title">
-                            <Link to="/signup">Sign Up</Link>
+                            <Link to="/signup" className='_title'>Sign Up</Link>
                         </div>
                         <div className="line"></div>
                     </div>
@@ -97,8 +96,8 @@ const Login = () => {
                         <LoginPage className='google_img'/>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>    
+        </Layout>
     );
 };
 

@@ -72,7 +72,7 @@ const MainPage = () => {
     };
     
     return (
-        <div className="main-container"
+        <div className="mainpage-container"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}>

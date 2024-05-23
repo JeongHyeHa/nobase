@@ -3,11 +3,14 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import './userpage.css';
 import profile from '../../assets/image/profile.jpg';
-// import rightIcon from '../../assets/icon/right.png'; 
-import { ReactComponent as right} from '../../assets/icon/right.svg';
+import { ReactComponent as Right} from '../../assets/icon/right.svg';
 import Layout from '../layout/layout';
+import Withdraw from './withdraw';
+
 
 function Userpage() {
+    const [isWithdrawOpen, setIsWithdrawOpen] = useState(false);    /*계정 삭제*/
+
     const [cookies, setCookie, removeCookie] = useCookies(['user', 'name', 'email', 'phone', 'address']);
     const name = cookies.name || 'Helena Hills';
     const email = cookies.email || 'name@domain.com';
@@ -16,10 +19,18 @@ function Userpage() {
 
     const navigate = useNavigate();
 
-    const handleLogout = () => {
+    const handleLogout = () => {    /*로그아웃*/
         removeCookie('user', { path: '/' });
         navigate('/'); 
     };
+
+    const handleOpenWithdraw = () => {  /*계정삭제*/
+        setIsWithdrawOpen(true);
+      };
+    
+      const handleCloseWithdraw = () => {
+        setIsWithdrawOpen(false);
+      };
 
     useEffect(() => {
         setCookie('name', 'Helena Hills', { path: '/', expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) });
@@ -29,7 +40,7 @@ function Userpage() {
 
     return (
         <Layout>
-            <div className="main-container">
+            <div className="userpage-container">
                 <div className="profile">
                     <img src={profile} alt="프로필 사진" className="profile-image" />
                 </div>
@@ -59,9 +70,13 @@ function Userpage() {
                     <div className="info-item last">
                         <p className="label"><strong>Products:</strong></p>
                         <p className="value">
-                            <a href="/products"><right /></a>
+                            <a href="/products" ><Right className='svgIcon'/></a>
                         </p>
                     </div>
+                </div>
+                <div className="delete">
+                    <button className="delete-button" onClick={handleOpenWithdraw}>계정 삭제</button>
+                    {isWithdrawOpen && <Withdraw onClose={handleCloseWithdraw} />}
                 </div>
             </div>
         </Layout>

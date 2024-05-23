@@ -71,7 +71,7 @@ function WritePage() {
 
     return (
         <Layout >
-            <div className="main-container">
+            <div className="writepage-container">
                 <div className="write-page">
                     <form className="write-form" onSubmit={handleSubmit}>
                         <div className="form-group">
